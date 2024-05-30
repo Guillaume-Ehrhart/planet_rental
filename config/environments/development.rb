@@ -62,6 +62,12 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
+
+  # In production, :host should be set to the actual host of your application.
+  # Change to Heroku's app name when deploying to production.
+  config.action_mailer.default_url_options = { host: 'localhost', port: 5002 }
+
+
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 

@@ -5,12 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
   <body>
-    <%= yield %>
+    <!-- I added all the lines below to the body except for yield element --->
+    <%= render "shared/navbar" %>
+    <div class="container">
+      <%= render "shared/flashes" %>
+      <%= yield %>
+      <% if user_signed_in? %>
+        <p>Hi, <%= current_user.email %></p>
+      <% end %>
+    </div>
   </body>
 </html>
