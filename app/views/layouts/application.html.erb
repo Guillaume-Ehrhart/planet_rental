@@ -15,7 +15,7 @@
       <%= render "shared/flashes" %>
       <%= yield %>
       <% if user_signed_in? %>
-        <p>Hi, <%= current_user.email %></p>
+        <p>Hi, <%= current_user.email %>!</p>
       <% end %>
     </div>
   </body>
