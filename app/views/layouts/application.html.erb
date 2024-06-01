@@ -5,12 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
   <body>
-    <%= yield %>
+    <%# navbar %>
+    <%= render "shared/navbar" %>
+    <%# notice and alert messages %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%# body  %>
+    <div class="container mt-5">
+      <%= yield %>
+    </div>
+    <%# add footer %>
+    <%= render "shared/footer" %>
   </body>
 </html>
